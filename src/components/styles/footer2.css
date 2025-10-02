@@ -1,0 +1,23 @@
+footer {
+  padding: 5px 0; /* reduces vertical padding */
+  margin: 0;      /* remove extra margin */
+  color: white;
+}
+
+footer p {
+  margin: 0;      /* remove default paragraph margin */
+  line-height: 1.2;
+    color: white;
+  
+}
+
+footer ul.nav {
+  margin: 0;      /* remove default ul margin */
+  padding: 0;     /* remove default ul padding */
+  color: white;
+}
+
+footer ul.nav li {
+  margin: 0 5px;  /* optional: small horizontal spacing between icons */
+  color: white;
+}

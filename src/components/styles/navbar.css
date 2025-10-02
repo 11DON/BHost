@@ -1,0 +1,196 @@
+
+.navbar{
+  background-color: transparent;
+  box-shadow: none;
+  position: absolute;
+  z-index: 10;
+}
+/* ===============================
+   MAIN NAV LINKS HOVER
+================================*/
+.navbar .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+  /* smooth color change */
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(135deg, #5A4FCF, #6A5EFF);
+  transition: width 0.3s ease;
+  /* underline animation */
+}
+
+.navbar .nav-link:hover {
+  color: #5A4FCF !important;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+  /* expands underline */
+}
+
+/* ===============================
+   DROPDOWN ANIMATION
+================================*/
+.navbar .dropdown-menu {
+  display: block;
+  /* needed for hover handling */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  /* slide down */
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  /* small delay before hiding */
+  border-radius: 0.4rem;
+  padding: 0.5rem 0;
+  pointer-events: none;
+  /* prevents accidental hovering */
+}
+
+/* Show dropdown smoothly on hover */
+.navbar .dropdown:hover>.dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  /* reset slide */
+  pointer-events: auto;
+  /* enable items when visible */
+  transition-delay: 0s;
+  /* appear immediately */
+}
+
+/* ===============================
+   SUBMENU (inside dropdown)
+================================*/
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-item::after {
+
+  float: right;
+  margin-left: 0.3rem;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+/* Default submenu hidden state */
+.dropdown-submenu .dropdown-menu {
+  position: absolute;   /* detach from flow */
+  top: 0;
+  left: 100%;           /* push to right side */
+  margin-left: 0.3rem;
+  margin-top: -0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px); /* slide in from right */
+  transition: all 0.3s ease;
+  pointer-events: none;
+  min-width: 180px;     /* ensure enough width */
+  z-index: 999;         /* make sure it’s above */
+}
+
+/* Show submenu smoothly */
+.dropdown-submenu:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+
+/* ===============================
+   DROPDOWN ITEMS HOVER
+================================*/
+.dropdown-menu .dropdown-item {
+  font-size: 0.85rem;
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: #f1f1ff;
+  padding-left: 1.5rem;
+  color: #5A4FCF;
+}
+
+/* ===============================
+   SEARCH INPUT ANIMATION
+================================*/
+/* Base (hidden) state */
+.search-input {
+  max-width: 0;
+  transform: translateX(20px);
+  overflow: hidden;
+  opacity: 0;
+  
+}
+
+/* When showing */
+.search-input.show {
+  transform: translateX(0);
+  max-width: 200px;
+  opacity: 1;
+  
+transition:
+    max-width 0.4s ease 0.2s,   
+    opacity 0.3s ease 0.2s,
+    transform 0.4s ease 0.2s;
+  transition-delay: 0s;
+}
+
+
+.btnSearch {
+  color: black;
+  border: 0;
+}
+
+.btnSearchIcon {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+@media (max-width: 992px) {
+  /* Whole navbar stacks vertically */
+  .navbar-nav {
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .nav-item {
+    width: 100%;
+    overflow: hidden;
+  }
+  .dropdown-item{
+    overflow: hidden;
+  }
+
+  
+
+.dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0;
+  margin: 0;
+  border: none;
+  opacity: 0;
+}
+
+/* expanded */
+.dropdown-menu.show {
+  max-height: 500px;  /* large enough to fit items */
+  opacity: 1;
+  padding: 0.5rem 0;
+  margin-top: 0.25rem;
+  border: 1px solid rgba(0,0,0,.15);
+}
+}

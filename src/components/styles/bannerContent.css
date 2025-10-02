@@ -1,0 +1,72 @@
+.bannerContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bannerTitle.loaded {
+  opacity: 1;
+  filter: blur(0); /* gradually sharpens */
+}
+.bannerImg {
+  display: flex;
+  gap: 6rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+.bannerImg img {
+  width: 80px;
+  height: auto;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.5s ease;
+}
+
+.bannerImg img.slideIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bannerImg img.delay1 {
+  transition-delay: 0.3s;
+}
+
+.bannerImg img.delay2 {
+  transition-delay: 0.6s;
+}
+
+.bannerImg img {
+  width: 80px;
+  height: auto;
+}
+
+.bannerTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  filter: blur(5px); /* start blurry */
+  transition: filter 3s ease, opacity 0.5s ease;
+}
+
+.bannerSubtitle {
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.1rem; /* more reasonable */
+  opacity: 0;
+  transform: translateY(50px); /* start below */
+  transition: all 0.3s ease;
+}
+
+.bannerSubtitle.slideUp {
+  opacity: 1;
+  transform: translateY(0); /* slide up into place */
+   transition-delay: 0.3s;
+}
