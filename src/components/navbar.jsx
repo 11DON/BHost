@@ -30,9 +30,8 @@ export default function CustomNavbar() {
           <img
             src={logo}
             alt="Logo"
-            style={{ height: "40px", marginRight: "10px" }}
+            style={{ height: "150px", marginRight: "10px"}}
           />
-          <span style={{ fontWeight: "bold", color: "#555" }}>Systems</span>
         </Navbar.Brand>
 
         {/* Mobile toggle */}
@@ -134,9 +133,9 @@ export default function CustomNavbar() {
                 title="Products"
                 items={[
                   { to: "/rayaInsuPage", label: "Reaya Insurance" },
-                  { href: "#crm", label: "CRM" },
-                  { href: "#edu", label: "eduSIS" },
-                  { href: "#spm", label: "SPM" },
+                  { to: "/crmPage", label: "CRM" },
+                  { to: "/edisysPage", label: "eduSIS" },
+                  { to: "/spmPage", label: "SPM" },
                 ]}
               />
 

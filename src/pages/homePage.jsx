@@ -13,7 +13,7 @@ export default function HomePage() {
       <Features />
       <Values />
       <LatesCustomers />
-      <Footer />
+        <Footer />
     </div>
   );
 }

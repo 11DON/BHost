@@ -6,19 +6,19 @@
   background-repeat: no-repeat;
   background-size: cover;   /* makes it fill the section */
   background-position: bottom;
-  height: 150vh;
+  height: 110vh;
   display: flex;
-
   padding: 0 5%;
   gap: 2rem;
 }
 
 .hero-content {
+  padding-top: 8rem;
   color: white;
+  height: fit-content;
 }
 
 .hero-content h1 {
-  padding-top: 10rem;
   font-size: 3rem;
 }
 
@@ -28,13 +28,14 @@
 }
 
 .hero-content p {
-  font-size: 1rem;
-  max-width: 600px;
+  font-size: 1.2rem;
+  max-width: 900px;
   line-height: 1.6;
 }
 
 .hero-image {
-
+  padding-top: 10rem;
+  height: fit-content;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -55,9 +56,6 @@
 }
 
 
-
-
-
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
@@ -69,7 +67,6 @@
 }
 
 .hero-content p {
-  font-size: 1rem;
   max-width: 600px;
 }
 
@@ -78,4 +75,103 @@
   max-width: 100%;
   height: auto;
   animation: float 6s ease-in-out infinite;
+}
+
+
+.modulesSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 8%;
+  gap: 3rem;
+}
+
+.modulesImage img {
+  max-width: 350px;
+}
+
+.modulesContent h3 {
+  color: #00a48c;
+  margin-bottom: 0.5rem;
+}
+
+.modulesContent h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.modulesContent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modulesContent ul li {
+  margin: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.modulesContent ul li::before {
+  content: "○";
+  position: absolute;
+  left: 0;
+  color: #00a48c;
+}
+
+.modulesContent .active {
+  font-weight: bold;
+  color: #00a48c;
+}
+
+.startBtn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background: #00a48c;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.startBtn:hover {
+  background: #008f76;
+}
+
+/* Insurance Suite */
+.suiteSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 8%;
+  gap: 3rem;
+}
+
+.suiteContent h3 {
+  color: #00a48c;
+  margin-bottom: 0.5rem;
+}
+
+.suiteContent h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.suiteContent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.suiteContent ul li {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.suiteImage img {
+  max-width: 350px;
+}
+
+
+.crmSuite p{
+  color: black;
 }

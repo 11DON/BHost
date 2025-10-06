@@ -1,0 +1,55 @@
+.footer {
+  position: relative;
+  padding: 100px 20px;
+  color: #fff;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%230099ff' fill-opacity='1' d='M0,96L20,90.7C40,85,80,75,120,69.3C160,64,200,64,240,58.7C280,53,320,43,360,48C400,53,440,75,480,80C520,85,560,75,600,85.3C640,96,680,128,720,138.7C760,149,800,139,840,122.7C880,107,920,85,960,64C1000,43,1040,21,1080,32C1120,43,1160,85,1200,133.3C1240,181,1280,235,1320,224C1360,213,1400,139,1420,101.3L1440,64L1440,320L0,320Z'></path></svg>");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.footerReaya {
+  position: relative;
+  padding: 100px 20px; /* more padding for spacing */
+  color: #fff;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%2300cba9' fill-opacity='1' d='M0,96L20,90.7C40,85,80,75,120,69.3C160,64,200,64,240,58.7C280,53,320,43,360,48C400,53,440,75,480,80C520,85,560,75,600,85.3C640,96,680,128,720,138.7C760,149,800,139,840,122.7C880,107,920,85,960,64C1000,43,1040,21,1080,32C1120,43,1160,85,1200,133.3C1240,181,1280,235,1320,224C1360,213,1400,139,1420,101.3L1440,64L1440,320L0,320Z'></path></svg>");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  z-index: 1;
+}
+
+.ediSysFooter {
+  position: relative;
+  padding: 100px 20px; /* more padding for spacing */
+  color: #fff;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%232596be' fill-opacity='1' d='M0,96L20,90.7C40,85,80,75,120,69.3C160,64,200,64,240,58.7C280,53,320,43,360,48C400,53,440,75,480,80C520,85,560,75,600,85.3C640,96,680,128,720,138.7C760,149,800,139,840,122.7C880,107,920,85,960,64C1000,43,1040,21,1080,32C1120,43,1160,85,1200,133.3C1240,181,1280,235,1320,224C1360,213,1400,139,1420,101.3L1440,64L1440,320L0,320Z'></path></svg>");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  z-index: 1;
+}
+.spmFooter {
+  position: relative;
+  padding: 100px 20px; /* more padding for spacing */
+  color: #fff;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%235000caaa' fill-opacity='1' d='M0,96L20,90.7C40,85,80,75,120,69.3C160,64,200,64,240,58.7C280,53,320,43,360,48C400,53,440,75,480,80C520,85,560,75,600,85.3C640,96,680,128,720,138.7C760,149,800,139,840,122.7C880,107,920,85,960,64C1000,43,1040,21,1080,32C1120,43,1160,85,1200,133.3C1240,181,1280,235,1320,224C1360,213,1400,139,1420,101.3L1440,64L1440,320L0,320Z'></path></svg>");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  z-index: 1;
+}
+.fot {
+  color: white;
+  text-align: start;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer p {
+  padding-top: 1rem;
+
+  margin: 3px 0;
+}

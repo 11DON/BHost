@@ -1,18 +1,12 @@
-import footer from "../assets/footer.png";
-import "../components/styles/footer.css"
+import style from "../components/styles/footer.module.css";
 import Footer2 from "./footer2";
-export default function Footer() {
+export default function Footer({ className = "" }) {
+  // Accepts an optional className for background override
   return (
     <div>
-      <footer className="text-center text-lg-start bg-body-tertiary text-muted"
-        style={{
-          backgroundImage: `url(${footer})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}>
-
-
+      <footer
+        className={`text-center text-lg-start bg-body-tertiary text-muted ${style.footer} ${className}`}
+      >
         {/* Links section */}
         <section>
           <div className="container text-center text-md-start mt-6">
@@ -55,8 +49,6 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-
-
             </div>
           </div>
         </section>
