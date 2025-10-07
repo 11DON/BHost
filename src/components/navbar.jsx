@@ -4,10 +4,12 @@ import styles from "../components/styles/navbar.module.css";
 import { useState, useEffect, useRef } from "react";
 import DropdownItemWithSubmenu from "../components/drop"; // our reusable dropdown
 import { Link } from "react-router-dom";
+import InquiryModal from "./inquiryModal";
 
 export default function CustomNavbar() {
   const [showSearch, setShowSearch] = useState(false);
   const searchRef = useRef(null);
+  const [showInquiry, setShowInquiry] = useState(false);
 
   // close search if clicked outside
   useEffect(() => {
@@ -41,10 +43,10 @@ export default function CustomNavbar() {
             {/* Top links */}
             <Nav className="mb-2 ms-auto">
               <Nav.Link href="/" className={styles.navLink} style={{ fontSize: "0.7rem" }}>Home</Nav.Link>
-              <Nav.Link href="/about" className={styles.navLink} style={{ fontSize: "0.7rem" }}>About P Systems</Nav.Link>
-              <Nav.Link href="/careers" className={styles.navLink} style={{ fontSize: "0.7rem" }}>Careers</Nav.Link>
-              <Nav.Link href="/blog" className={styles.navLink} style={{ fontSize: "0.7rem" }}>Blog</Nav.Link>
-              <Nav.Link href="/contact" className={styles.navLink} style={{ fontSize: "0.7rem" }}>Contact Us</Nav.Link>
+              <Nav.Link href="/aboutPage" className={styles.navLink} style={{ fontSize: "0.7rem" }}>About I Sources</Nav.Link>
+              {/* <Nav.Link href="/careers" className={styles.navLink} style={{ fontSize: "0.7rem" }}>Careers</Nav.Link> */}
+              {/* <Nav.Link href="/blog" className={styles.navLink} style={{ fontSize: "0.7rem" }}>Blog</Nav.Link> */}
+              <Nav.Link href="/contactPage" className={styles.navLink} style={{ fontSize: "0.7rem" }}>Contact Us</Nav.Link>
 
               {/* Search */}
               <div className="d-flex ms-auto align-items-center gap-2" ref={searchRef}>
@@ -84,49 +86,52 @@ export default function CustomNavbar() {
                 items={[
                   {
                     label: "Application Development",
-                    href: "#",
+                    to: "/applDevPage",
                     children: [
-                      { href: "#custom-apps", label: "Custom Digital Applications" },
-                      { href: "#cloud-native", label: "Cloud Native Applications" },
-                      { href: "#chatbot", label: "Chatbots & Digital Assistants" },
-                      { href: "#mobile", label: "Mobile Applications" },
-                      { href: "#oracle", label: "Oracle Forms Modernization" },
+                      { to: "/customDigitalAppPage", label: "Custom Digital Applications" },
+                      { to: "/cloudPage", label: "Cloud Native Applications" },
+                      { to: "/chatBotPage", label: "Chatbots & Digital Assistants" },
+                      { to: "/mobAppPage", label: "Mobile Applications" },
+                      { to: "/oracleFormsPage", label: "Oracle Forms Modernization" },
                     ],
                   },
                   {
                     label: "Integration",
                     href: "#",
+                    to:"/intMainPage",
                     children: [
-                      { href: "#integration-apps", label: "Application Integration" },
-                      { href: "#identity", label: "Identity Integration" },
-                      { href: "#automation", label: "Process Automation" },
-                      { href: "#cloud-int", label: "Cloud Integration" },
+                      { to: "/integPage", label: "Application Integration" },
+                      { href: "/identityIntegPage", label: "Identity Integration" },
+                      { href: "/pautoPage", label: "Process Automation" },
+                      { href: "/cloudIntegPage", label: "Cloud Integration" },
                     ],
                   },
                   {
                     label: "Data Management",
                     href: "#",
+                    to: "/dataManageMainPage",
                     children: [
-                      { href: "#data-int", label: "Data Integration" },
-                      { href: "#content", label: "Content Management" },
-                      { href: "#analytics", label: "Data Visualization" },
-                      { href: "#ml", label: "Machine Learning" },
+                      { href: "/dataIntePage", label: "Data Integration" },
+                      { href: "/contentManagePage", label: "Content Management" },
+                      { href: "/dataVisuaPage", label: "Data Visualization" },
+                      { href: "/machLearnPage", label: "Machine Learning" },
                     ],
                   },
                   {
                     label: "Managed Services",
                     href: "#",
+                    to:"/managedServicesPage",
                     children: [
-                      { href: "#support", label: "Support" },
-                      { href: "#outsourcing", label: "Outsourcing" },
-                      { href: "#training", label: "Training" },
+                      { to: "/supportPage", label: "Support" },
+                      { href: "/outsourcingPage", label: "Outsourcing" },
+                      { href: "/trainPage", label: "Training" },
                     ],
                   },
                 ]}
               />
 
               {/* Consulting */}
-              <Nav.Link href="/consulting" className={styles.navLink}>Consulting</Nav.Link>
+              <Nav.Link href="/consultPage" className={styles.navLink}>Consulting</Nav.Link>
 
               {/* Products */}
               <DropdownItemWithSubmenu
@@ -140,24 +145,27 @@ export default function CustomNavbar() {
               />
 
               {/* Other links */}
-              <Nav.Link href="/technologies" className={styles.navLink}>Technologies</Nav.Link>
-              <Nav.Link href="/clients" className={styles.navLink}>Our Clients</Nav.Link>
+              <Nav.Link href="/techPage" className={styles.navLink}>Technologies</Nav.Link>
+              {/* <Nav.Link href="/clients" className={styles.navLink}>Our Clients</Nav.Link> */}
 
               {/* Inquiry Button */}
-              <Button
-                href="/inquiry"
-                className="mt-3 mt-lg-0 ms-lg-3"
-                style={{
-                  background: "linear-gradient(135deg, #5A4FCF, #6A5EFF)",
-                  border: "none",
-                  fontWeight: "bold",
-                  padding: "8px 16px",
-                  borderRadius: "4px",
-                  fontSize: "0.9rem",
-                }}
-              >
-                SEND <span style={{ fontSize: "0.8rem" }}>INQUIRY</span>
-              </Button>
+                <>
+                  <Button
+                    onClick={() => setShowInquiry(true)}
+                    className="mt-3 mt-lg-0 ms-lg-3"
+                    style={{
+                      background: "linear-gradient(135deg, #5A4FCF, #6A5EFF)",
+                      border: "none",
+                      fontWeight: "bold",
+                      padding: "8px 16px",
+                      borderRadius: "4px",
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    SEND <span style={{ fontSize: "0.8rem" }}>INQUIRY</span>
+                  </Button>
+                  <InquiryModal show={showInquiry} onHide={() => setShowInquiry(false)} />
+                </>
             </Nav>
           </div>
         </Navbar.Collapse>

@@ -9,6 +9,7 @@ function DropdownItemWithSubmenu({ title, items }) {
       <button
         className="btn text-start text-lg-center dropdown-toggle"
         onClick={() => setOpen(!open)}
+        type="button"
       >
         {title}
       </button>
@@ -18,26 +19,48 @@ function DropdownItemWithSubmenu({ title, items }) {
           <li key={i} className={item.children ? "dropdown-submenu" : ""}>
             {item.children ? (
               <>
-                <button
-                  className="dropdown-item  text-start"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  {item.label}
-                </button>
-                <ul className="dropdown-menu">
+                {item.to ? (
+                  <Link
+                    className="dropdown-item text-start"
+                    to={item.to}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    className="dropdown-item text-start"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    {item.label}
+                  </button>
+                )}
+                <ul className="dropdown-menu submenu-responsive">
                   {item.children.map((child, j) => (
                     <li key={j}>
-                      <Link className="dropdown-item" to={child.to}>
-                        {child.label}
-                      </Link>
+                      {child.to ? (
+                        <Link className="dropdown-item" to={child.to} onClick={() => setOpen(false)}>
+                          {child.label}
+                        </Link>
+                      ) : (
+                        <a className="dropdown-item" href={child.href} onClick={() => setOpen(false)}>
+                          {child.label}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
               </>
             ) : (
-              <Link className="dropdown-item" to={item.to}>
-                {item.label}
-              </Link>
+              item.to ? (
+                <Link className="dropdown-item" to={item.to} onClick={() => setOpen(false)}>
+                  {item.label}
+                </Link>
+              ) : (
+                <a className="dropdown-item" href={item.href} onClick={() => setOpen(false)}>
+                  {item.label}
+                </a>
+              )
             )}
           </li>
         ))}

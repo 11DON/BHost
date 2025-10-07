@@ -1,4 +1,109 @@
-/* reayaInsuPage.module.css */
+/* Base layout remains as is (desktop-first) */
+
+/* =========================================
+   Responsive Design — Tablet and Smaller
+========================================= */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    height: auto; /* allow natural content height */
+  }
+
+  .hero-content {
+    padding-top: 2rem;
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  .hero-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .hero-image {
+    padding-top: 1rem;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 22rem;
+    height: auto;
+    padding-bottom: 1rem;
+  }
+
+  .modulesSection,
+  .suiteSection {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .modulesContent,
+  .suiteContent {
+    width: 100%;
+  }
+
+  .modulesImage img,
+  .suiteImage img {
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .startBtn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* =========================================
+   Small Phones
+========================================= */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content h3 {
+    font-size: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .modulesImage img,
+  .suiteImage img {
+    max-width: 100%;
+  }
+
+  .modulesSection,
+  .suiteSection {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .startBtn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
 
 .hero {
   /* Inline SVG as background */

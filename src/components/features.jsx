@@ -69,7 +69,7 @@ export default function Features() {
 
 
     {
-      title: "Manage Service", image: manageService, details: `<p>At P Systems, we understand the importance of seamless operations,
+      title: "Manage Service", image: manageService, details: `<p>At I Sources, we understand the importance of seamless operations,
        optimal performance, and continuous innovation. That's why we offer a comprehensive suite of managed services to support your organization's technology needs.
         Whether you require ongoing support, onboarding skilled calibers/talents, or training programs,
          we have got you covered. Choose from the following managed services tailored to meet your specific requirements:</p>`,

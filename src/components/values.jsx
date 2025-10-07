@@ -35,7 +35,7 @@ export default function Values() {
 
   return (
     <div className="values-section">
-      <h1 className="title">P SYSTEMS Values</h1>
+      <h1 className="title">I Sources Values</h1>
       <img className="values-image" src={values} alt="Values" />
       <div className="values-row">
         {valueItems.map((item, index) => (

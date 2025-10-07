@@ -104,7 +104,7 @@ export default function EdiSysPage() {
       <motion.div
         className={crmstyleFrom.suiteSection}
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true, amount: 0.3 }}
       >
@@ -173,11 +173,13 @@ export default function EdiSysPage() {
           <img src={e3} alt="" />
         </div>
       </div>
+
+      
     {/* BUssiness added value */}
       <motion.div
         style={{ position: "relative", display: "flex", alignItems: "flex-start" }}
         initial={{ opacity: 1, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true, amount: 0.3 }}
       >
@@ -232,6 +234,7 @@ export default function EdiSysPage() {
             </ul>
           </div>
         </motion.div>
+
         <motion.div
           className={crmstyleFrom.edisAnimatedImg}
           style={{

@@ -1,255 +1,264 @@
-/* Copied from navbar.css for use as a CSS Module, with :global for Bootstrap overrides */
-
+/* ===============================
+   GLOBAL NAVBAR BASE STYLES
+================================*/
 :global(.navbar) {
-    background-color: transparent !important;
-    box-shadow: none !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    z-index: 1000 !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  z-index: 1000 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* ===============================
-   MAIN NAV LINKS HOVER
+   NAV LINKS (Default)
 ================================*/
 :global(.navbar .nav-link) {
-    position: relative;
-    transition: color 0.3s ease;
-    /* smooth color change */
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 :global(.navbar .nav-link)::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(135deg, #5A4FCF, #6A5EFF);
-    transition: width 0.3s ease;
-    /* underline animation */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(135deg, #5a4fcf, #6a5eff);
+  transition: width 0.3s ease;
 }
 
 :global(.navbar .nav-link:hover) {
-    color: #5A4FCF !important;
+  color: #5a4fcf !important;
 }
 
 :global(.navbar .nav-link:hover)::after {
-    width: 100%;
-    /* expands underline */
+  width: 100%;
 }
 
 /* ===============================
-   DROPDOWN ANIMATION
+   DROPDOWN ANIMATIONS (Desktop)
 ================================*/
-:global(.navbar .dropdown-menu) {
+@media (min-width: 992px) {
+  :global(.navbar .dropdown-menu) {
     display: block;
-    /* needed for hover handling */
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    /* slide down */
     transition: all 0.3s ease;
     transition-delay: 0.1s;
-    /* small delay before hiding */
     border-radius: 0.4rem;
     padding: 0.5rem 0;
     pointer-events: none;
-    /* prevents accidental hovering */
-}
+  }
 
-/* Show dropdown smoothly on hover */
-:global(.navbar .dropdown:hover>.dropdown-menu) {
+  :global(.navbar .dropdown:hover > .dropdown-menu) {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    /* reset slide */
     pointer-events: auto;
-    /* enable items when visible */
     transition-delay: 0s;
-    /* appear immediately */
-}
+  }
 
-/* ===============================
-   SUBMENU (inside dropdown)
-================================*/
-:global(.dropdown-submenu) {
+  :global(.dropdown-submenu) {
     position: relative;
-}
+  }
 
-:global(.dropdown-submenu > .dropdown-item)::after {
+  :global(.dropdown-submenu > .dropdown-item)::after {
     float: right;
     margin-left: 0.3rem;
     font-size: 0.7rem;
     color: #666;
-}
+  }
 
-/* Default submenu hidden state */
-:global(.dropdown-submenu .dropdown-menu) {
+  :global(.dropdown-submenu .dropdown-menu) {
     position: absolute;
-    /* detach from flow */
     top: 0;
     left: 100%;
-    /* push to right side */
-    margin-left: 0.3rem;
     margin-top: -0.25rem;
     opacity: 0;
     visibility: hidden;
     transform: translateX(10px);
-    /* slide in from right */
     transition: all 0.3s ease;
     pointer-events: none;
     min-width: 180px;
-    /* ensure enough width */
     z-index: 999;
-    /* make sure it’s above */
-}
+  }
 
-/* Show submenu smoothly */
-:global(.dropdown-submenu:hover > .dropdown-menu) {
+  :global(.dropdown-submenu:hover > .dropdown-menu) {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
     pointer-events: auto;
+  }
 }
 
 /* ===============================
-   DROPDOWN ITEMS HOVER
+   DROPDOWN ITEMS
 ================================*/
 :global(.dropdown-menu .dropdown-item) {
-    font-size: 0.85rem;
-    transition: background 0.2s ease, padding-left 0.2s ease;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, padding-left 0.2s ease;
 }
 
 :global(.dropdown-menu .dropdown-item:hover) {
-    background: #f1f1ff;
-    padding-left: 1.5rem;
-    color: #5A4FCF;
+  background: #f1f1ff;
+  color: #5a4fcf;
 }
 
 /* ===============================
    SEARCH INPUT ANIMATION
 ================================*/
-/* Base (hidden) state */
 .search-input {
-    max-width: 0;
-    transform: translateX(20px);
-    overflow: hidden;
-    opacity: 0;
+  max-width: 0;
+  transform: translateX(20px);
+  overflow: hidden;
+  opacity: 0;
+  transition: none;
 }
 
-/* When showing */
 .search-input.show {
-    transform: translateX(0);
-    max-width: 200px;
-    opacity: 1;
-    transition:
-        max-width 0.4s ease 0.2s,
-        opacity 0.3s ease 0.2s,
-        transform 0.4s ease 0.2s;
-    transition-delay: 0s;
+  transform: translateX(0);
+  max-width: 200px;
+  opacity: 1;
+  transition: max-width 0.4s ease 0.2s,
+              opacity 0.3s ease 0.2s,
+              transform 0.4s ease 0.2s;
 }
 
 .btnSearch {
-    color: black;
-    border: 0;
+  color: black;
+  border: 0;
 }
 
 .btnSearchIcon {
-    font-size: 1rem;
-    font-weight: bold;
-    color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
 }
 
-@media (max-width: 992px) {
-
-    /* Whole navbar stacks vertically */
-    :global(.navbar-nav) {
-        flex-direction: row;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    :global(.nav-item) {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    :global(.dropdown-item) {
-        overflow: hidden;
-    }
-
-    :global(.dropdown-menu) {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        padding: 0;
-        margin: 0;
-        border: none;
-        opacity: 0;
-    }
-
-    /* expanded */
-    :global(.dropdown-menu.show) {
-        max-height: 500px;
-        /* large enough to fit items */
-        opacity: 1;
-        padding: 0.5rem 0;
-        margin-top: 0.25rem;
-        border: 1px solid rgba(0, 0, 0, .15);
-    }
-}
-
-/* Top-level nav links */
+/* ===============================
+   REAYA PAGE STYLING
+================================*/
 .reaya :global(.nav-link) {
-    color: white !important;
+  color: white !important;
 }
 
 .reaya :global(.nav-link:hover) {
-    color: #ddd !important;
-    /* softer hover, or keep white */
+  color: #ddd !important;
 }
 
-/* Dropdown items */
 .reaya :global(.dropdown-item) {
-    color: black !important;
-    background: transparent !important;
-    /* make sure background stays clean */
+  color: black !important;
+  background: transparent !important;
 }
 
 .reaya :global(.dropdown-item:hover) {
-    color: #5A4FCF !important; 
-    background: rgba(255, 255, 255, 0.1) !important;
-    /* light hover bg */
-}
-/* ===============================
-   Buttons on Reaya page
-================================*/
-.reaya :global(.btn) {
-    background: transparent !important;
-    color: white !important;
-    border: 1px solid white !important;
-    transition: all 0.3s ease;
+  color: #5a4fcf !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Hover + focus states */
+/* Buttons on Reaya page */
+.reaya :global(.btn) {
+  background: transparent !important;
+  color: white !important;
+  border: 1px solid white !important;
+  transition: all 0.3s ease;
+}
+
 .reaya :global(.btn:hover),
 .reaya :global(.btn:focus) {
-    background: rgba(255, 255, 255, 0.15) !important;
-    color: #ddd !important;
-    border-color: #ddd !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ddd !important;
+  border-color: #ddd !important;
 }
 
-/* If using .btn-primary */
 .reaya :global(.btn-primary) {
-    background: transparent !important;
-    color: white !important;
-    border: 1px solid white !important;
+  background: transparent !important;
+  color: white !important;
+  border: 1px solid white !important;
 }
 
 .reaya :global(.btn-primary:hover),
 .reaya :global(.btn-primary:focus) {
-    background: white !important;
-    color: #5A4FCF !important; /* brand accent */
+  background: white !important;
+  color: #5a4fcf !important;
+}
+
+/* ===============================
+   MOBILE / TABLET RESPONSIVE STYLES
+================================*/
+@media (max-width: 992px) {
+  /* Disable hover-based dropdowns */
+  :global(.navbar .dropdown:hover > .dropdown-menu),
+  :global(.dropdown-submenu:hover > .dropdown-menu),
+  :global(.navbar .nav-link:hover),
+  :global(.navbar .dropdown-item:hover) {
+    transition: none !important;
+    transform: none !important;
+    background: inherit !important;
+    color: inherit !important;
+  }
+
+  /* Stack vertically */
+  :global(.navbar-nav) {
+    background-color: white !important;
+    flex-direction: column !important;
+    align-items: start !important;
+    width: 100%;
+    padding: 1rem;
+    color: black;
+    font-weight: bold;
+  }
+
+  :global(.nav-item),
+  :global(.nav-link),
+  :global(.dropdown-item) {
+    width: 100%;
+    color: black !important;
+    text-align: left;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Dropdowns expand inside menu */
+  :global(.dropdown-menu) {
+    position: static !important;
+    transform: none !important;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    border: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    background: transparent !important;
+  }
+
+  :global(.dropdown-menu.show) {
+    max-height: 500px;
+    opacity: 1;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* Submenu indent */
+  :global(.dropdown-submenu .dropdown-menu) {
+    margin-left: 1rem;
+  }
+
+  /* Make the collapse scrollable */
+  :global(.navbar-collapse) {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* Reaya page override */
+  .reaya :global(.nav-link) {
+    color: black !important;
+  }
+
+  /* Hide extra submenu if needed */
+  .submenu-responsive {
+    display: none !important;
+  }
 }

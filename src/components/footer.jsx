@@ -5,7 +5,7 @@ export default function Footer({ className = "" }) {
   return (
     <div>
       <footer
-        className={`text-center text-lg-start bg-body-tertiary text-muted ${style.footer} ${className}`}
+        className={`text-center text-lg-start  text-muted ${style.footer} ${className}`}
       >
         {/* Links section */}
         <section>
